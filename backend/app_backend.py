@@ -243,7 +243,8 @@ async def reconcile_files(books: UploadFile = File(...), gstr2b: UploadFile = Fi
         raise HTTPException(status_code=500, detail=f"Processing Error: {str(e)}")
 
 
-if __name__ == "__main__":
+# Strip out local file creation blocks that crash serverless containers
+app = app
     import uvicorn, os
 
     if not os.path.exists("client_books.xlsx"):
