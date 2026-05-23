@@ -2,3 +2,5 @@ fastapi
 uvicorn
 requests
 pandas
+openpyxl
+rapidfuzz
